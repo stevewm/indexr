@@ -12,4 +12,4 @@ def index():
       l = c.labels
       icon = url_for('static', filename='icons/' + l['indexr.icon'])
       urls.append({'name': l['indexr.name'], 'url': l['indexr.url'], 'icon': icon})
-  return render_template('index.html', containers=urls) 
+  return render_template('basic.html', containers=urls) 
