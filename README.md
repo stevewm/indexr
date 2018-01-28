@@ -6,7 +6,7 @@ Automated homepage creation using Docker labels. Currently POC.
 
 Label your containers with the following:
 
-- indexr.name
-- indexr.url
-- indexr.icon
--
+- `indexr.name`: Name of the link 
+- `indexr.url`: URL the link goes to
+- `indexr.icon`: Icon of the servce (put in static/icons directory)
+
