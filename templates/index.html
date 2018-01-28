@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<title>Indexr</title>
+	</head>
+	<body>
+		<ul>
+		{% for container in containers %}
+		<li><a href="{{ container.url }}"><img src="{{ container.icon }}" alt="{{ container.name }}"></a></li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>
