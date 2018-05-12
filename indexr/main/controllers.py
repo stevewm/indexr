@@ -3,6 +3,7 @@ from indexr.utils.docker import DockerUtils
 
 main = Blueprint('main', __name__, template_folder='templates')
 
+
 @main.route('/')
 def index():
     dockerutils = DockerUtils()
