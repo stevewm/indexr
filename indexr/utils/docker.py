@@ -12,3 +12,6 @@ class DockerUtils(object):
       l = c.labels
       enabled_containers.append({'name': l['indexr.name'], 'url': l['indexr.url'], 'icon': l['indexr.icon']})
     return enabled_containers
+
+  def get_containers(self):
+    return self.client.containers.list(filters={'label': 'indexr.enable=true'})
