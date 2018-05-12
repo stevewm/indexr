@@ -1,50 +1,53 @@
-<html>
-	<head>
-	  <title>Indexr</title>
-	    <style>
-		    * {
-			    margin: 0;
-				  padding: 0;
-		    }
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-				body {
-				  background: #333;
-					overflow-y:hidden;
-				}
 
-				#services-bar {
-				  width: 100%;
-				  margin: 0 auto;
-				  overflow: auto;
-				}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-				#services-bar ul {
-				  list-style-type: none;
-				}
+    <title>Indexr</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="card-deck">
+            {% for container in containers %}
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <a href="{{ container.url }}">
+                        <div class="card-body">
+                            <div class="media">
+                                <img class="align-self-center mr-3" src="{{ url_for('static', filename='icons/') }}{{ container.icon }}"
+                                     height="48px" width="48px">
+                                <div class="media-body">
+                                    <h5 class="mb-0">{{ container.name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
-				#services-bar li img {
-				  float: left;
-				  margin: 10px;
-				  border: 0;
-			          width: 48px;
-			          height: 48px;
-				}
 
-				#services-bar li img:hover {
-				  -webkit-box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
-				  box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
-				}
-     </style>
-	  </head>
-	<body>
-		<div id="services-bar">
-		  <ul>
-		    {% for container in containers %}
-		    <li><a href="{{ container.url }}" target="content-frame"><img src="{{ url_for('static', filename='icons/') }}{{ container.icon }}" alt="{{ container.name }}"></a></li>
-		    {% endfor %}
-		  </ul>
-		</div>
-
-	       <iframe id="content-frame"  name="content-frame" scrolling="auto" style="width:100%; height: 100%; position: absolute;" frameborder="0"></iframe>
-	</body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
 </html>
