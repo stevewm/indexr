@@ -10,32 +10,54 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
+    <style>
+        body {
+              padding-top: 4.5rem;
+              background: url(https://source.unsplash.com/random) no-repeat center center fixed;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+            }
+
+    </style>
     <title>Indexr</title>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="card-deck">
-            {% for container in containers %}
-            <div class="col-sm-4">
-                <div class="card mb-4">
-                    <a href="{{ container.url }}">
-                        <div class="card-body">
-                            <div class="media">
-                                <img class="align-self-center mr-3" src="{{ url_for('static', filename='icons/') }}{{ container.icon }}"
-                                     height="48px" width="48px">
-                                <div class="media-body">
-                                    <h5 class="mb-0">{{ container.name }}</h5>
+<!--<nav class="navbar navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Indexr</a>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>-->
+
+<main role="main" class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="card-deck">
+                {% for container in containers %}
+                <div class="col-sm-4">
+                    <div class="card mb-4">
+                        <a href="{{ container.url }}">
+                            <div class="card-body">
+                                <div class="media">
+                                    <img class="align-self-center mr-3"
+                                         src="{{ url_for('static', filename='icons/') }}{{ container.icon }}"
+                                         height="64px" width="64px">
+                                    <div class="media-body">
+                                        <p class="mb-0">{{ container.name }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
-</div>
+</main>
 
 
 <!-- Optional JavaScript -->
