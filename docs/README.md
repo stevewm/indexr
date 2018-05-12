@@ -1,13 +1,16 @@
 # Indexr
 
-Automated homepage creation using Docker labels. Currently POC.
+Automated dashboard creation using Docker labels. 
 
 ## Use
 
-Label your containers with the following:
+Label your containers with each of the following:
 
-- `indexr.enable` Must be set to `true` for Indexr to include it on the page
-- `indexr.name` Name of the link 
-- `indexr.url` URL the link goes to
-- `indexr.icon` Icon of the service (put in `static/icons` directory)
+| Label           	| Purpose                                             	|
+|-----------------	|-----------------------------------------------------	|
+| `indexr.enable` 	| Whether the service will be added to the dashboard  	|
+| `indexr.name`   	| The name the service will have on the dashboard     	|
+| `indexr.url`    	| The URL the service link will lead to               	|
+| `indexr.icon`   	| The icon of the service (must be in `static/icons`) 	|
 
+If any of the labels are missing, the service will not appear on the dashboard
