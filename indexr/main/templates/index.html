@@ -31,9 +31,9 @@
             <div class="card-deck">
                 {% for container in containers %}
                 <div class="col-sm-4">
-                    <div class="card mb-4">
+                    <div class="card mb-4 bg-light">
                         <a href="{{ container.url }}">
-                            <div class="card-body">
+                            <div class="card-body text-dark">
                                 <img class="align-self-center mr-3"
                                      src="{{ url_for('static', filename='icons/') }}{{ container.icon }}"
                                      height="64px" width="64px">
