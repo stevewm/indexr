@@ -2,6 +2,8 @@
 
 Automated dashboard creation using Docker labels. 
 
+![Preview](preview.png)
+
 ## Use
 
 Label your containers with each of the following:
