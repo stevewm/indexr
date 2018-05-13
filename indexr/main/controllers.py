@@ -14,6 +14,6 @@ def index():
 
 @main.route('potd')
 def potd():
+    # TODO: Get Unsplash POTD instead of random
     r = requests.get('https://source.unsplash.com/random')
-    print(r.content)
     return Response(r.content, mimetype=r.headers.get('content-type'))
