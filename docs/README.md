@@ -16,3 +16,7 @@ Label your containers with each of the following:
 | `indexr.icon`   	| The icon of the service (must be in `static/icons`) 	|
 
 If any of the labels are missing, the service will not appear on the dashboard
+
+## Development server
+
+Set `FLASK_APP` to `indexr.py` and run `flask run`.
