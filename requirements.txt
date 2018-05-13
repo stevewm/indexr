@@ -4,6 +4,7 @@ click==6.7
 docker==2.7.0
 docker-pycreds==0.2.1
 Flask==0.12.2
+Flask-WTF==0.14.2
 idna==2.6
 itsdangerous==0.24
 Jinja2==2.10
@@ -13,3 +14,4 @@ six==1.11.0
 urllib3==1.22
 websocket-client==0.46.0
 Werkzeug==0.14.1
+WTForms==2.1
