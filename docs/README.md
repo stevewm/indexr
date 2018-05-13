@@ -1,6 +1,6 @@
 # Indexr
 
-Automated dashboard creation using Docker labels. 
+Automated dashboard creation using Docker labels. Designed for use with Docker Compose.
 
 ![Preview](preview.png)
 
