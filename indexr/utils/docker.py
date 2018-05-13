@@ -8,7 +8,11 @@ class DockerUtils(object):
 
     def get_enabled_containers(self):
         enabled_containers = []
-        for c in self.client.containers.list(filters={'label': 'indexr.enable=true'}):
-            l = c.labels
-            enabled_containers.append({'name': l['indexr.name'], 'url': l['indexr.url'], 'icon': l['indexr.icon']})
+        labels = {'indexr.name', 'indexr.url', 'indexr.icon'}
+        for container in self.client.containers.list(filters={'label': 'indexr.enable=true'}):
+            print(container.name)
+            if set(labels).issubset(container.labels):
+                labels = container.labels
+                enabled_containers.append(
+                    {'name': labels['indexr.name'], 'url': labels['indexr.url'], 'icon': labels['indexr.icon']})
         return enabled_containers
