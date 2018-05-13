@@ -1,8 +1,12 @@
 from flask import Flask
-from indexr.main.controllers import main
-from indexr.utils import *
+from config import Config
 
-app = Flask(__name__,
-            template_folder='templates')
 
-app.register_blueprint(main, url_prefix='/')
+def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(config_class)
+
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
+
+    return app

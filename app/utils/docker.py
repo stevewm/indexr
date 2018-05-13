@@ -10,7 +10,6 @@ class DockerUtils(object):
         enabled_containers = []
         labels = {'indexr.name', 'indexr.url', 'indexr.icon'}
         for container in self.client.containers.list(filters={'label': 'indexr.enable=true'}):
-            print(container.name)
             if set(labels).issubset(container.labels):
                 labels = container.labels
                 enabled_containers.append(
