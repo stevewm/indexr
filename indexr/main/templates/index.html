@@ -12,14 +12,12 @@
     <style>
         body {
               padding-top: 4.5rem;
-              background: url(https://source.unsplash.com/random) no-repeat center center fixed;
+              background: url({{ url_for('.potd') }}) no-repeat center center fixed;
               -webkit-background-size: cover;
               -moz-background-size: cover;
               -o-background-size: cover;
               background-size: cover;
             }
-
-
 
     </style>
     <title>Indexr</title>
@@ -31,7 +29,7 @@
             <div class="card-deck">
                 {% for container in containers %}
                 <div class="col-sm-4">
-                    <div class="card mb-4 bg-light">
+                    <div class="card mb-4 bg-light" style="background: red;">
                         <a href="{{ container.url }}">
                             <div class="card-body text-dark">
                                 <img class="align-self-center mr-3"
