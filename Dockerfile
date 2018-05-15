@@ -1,13 +1,15 @@
 FROM frolvlad/alpine-python3:latest
 
-RUN mkdir /app
+RUN mkdir /indexr
 
-WORKDIR /app
+COPY requirements.txt /indexr/requirements.txt
+RUN pip install -r indexr/requirements.txt
 
-COPY requirements.txt /app/requirements.txt
-RUN pip install -r requirements.txt
+COPY app/ indexr/app/
 
-COPY run.py /app
-COPY indexr /app/indexr
+COPY config.py indexr/config.py
+COPY indexr.py indexr/indexr.py
 
-CMD python /app/run.py
+ENV FLASK_APP /indexr/indexr.py
+
+ENTRYPOINT flask run --host 0.0.0.0 --port 80
